@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping(path = "api/v1")
 public class HumanController {
 
@@ -15,7 +16,6 @@ public class HumanController {
     public HumanController(HumanService humanService) {
         this.humanService = humanService;
     }
-
 
     @GetMapping(path = "/humans")
     public List<Human> getHumans() {
